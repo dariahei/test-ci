@@ -1,5 +1,5 @@
 const sorting = function (data) {
-  data = [];  
+  // data = [];  
   data.sort(function (a, b) {
     if (a.health < b.health) {
       return 1;
@@ -9,7 +9,7 @@ const sorting = function (data) {
     }
     return 0;
   });
-  console.log(data);
+  return data;
 };
 
 export default sorting;

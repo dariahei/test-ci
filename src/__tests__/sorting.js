@@ -1,12 +1,22 @@
 import sorting from '../sorting.js';
 
-test('compare close numbers', (data) => {
-    for (let i = 0; i < data.length-2; i++) {
-         expect(data[i].health).toBeLessThanOrEqual(data[i+1].health)
-    }
-    // expect().toBe();
+test('compare result', () => {
+    let data = [
+        { name: 'мечник', health: 100 },
+        { name: 'маг', health: 15 },
+        { name: 'лучник', health: 80 },
+        { name: 'лучник', health: 75 },
+        { name: 'лучник', health: 5 },
+        { name: 'мечник', health: 15 },
+      ];
+    const result = sorting(data);
+    let sortData = [
+        { name: 'мечник', health: 100 },
+        { name: 'лучник', health: 80 },
+        { name: 'лучник', health: 75 },
+        { name: 'маг', health: 15 },
+        { name: 'мечник', health: 15 },
+        { name: 'лучник', health: 5 }
+      ]
+    expect(result).toEqual(sortData); 
 })
-
-// test('ounces per can is at most 12', () => {
-//     expect(ouncesPerCan()).toBeLessThanOrEqual(12);
-//   });
